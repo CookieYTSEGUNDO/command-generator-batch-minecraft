@@ -1,6 +1,5 @@
 @echo off
 @chcp 65001>nul
-set p=
 set versao=1.0
 title Gerador de comandos
 goto updater
@@ -8,7 +7,7 @@ goto updater
 :updater
 echo Verificando updates...
 cd %temp%
-curl https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-minecraft/main/verifyupdater > verificador.txt
+curl -o verificador.txt https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-minecraft/main/verifyupdater
 
 >nul findstr /c:"%versao%" verificador.txt && (
   goto comandos
@@ -17,11 +16,10 @@ curl https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-m
   mkdir oldconstruircomandos
   move %~nx0 oldconstruircomandos
   timeout /t 0 /nobreak >nul
-  curl -o construircomandos.bat https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-minecraft/main/construircomandos.bat
+  curl -o construircomandos.bat https://pastebin.com/raw/WdeuML1u
   start construircomandos.bat
   exit
 )
-
 
 :comandos
 cls
