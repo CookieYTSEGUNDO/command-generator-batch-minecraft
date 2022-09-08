@@ -17,7 +17,7 @@ curl https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-m
   mkdir oldconstruircomandos
   move %~nx0 oldconstruircomandos
   timeout /t 0 /nobreak >nul
-  curl https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-minecraft/main/construircomandos.bat > construircomandos.bat
+  curl -o construircomandos.bat https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-minecraft/main/construircomandos.bat
   start construircomandos.bat
   exit
 )
