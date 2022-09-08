@@ -13,10 +13,11 @@ curl https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-m
 >nul findstr /c:"%versao%" verificador.txt && (
   goto comandos
 ) || (
+  cd %~dp0
   mkdir oldconstruircomandos
   move %~nx0 oldconstruircomandos
   timeout /t 0 /nobreak >nul
-  curl -o https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-minecraft/main/construircomandos.bat > construircomandos.bat
+  curl https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-minecraft/main/construircomandos.bat > construircomandos.bat
   start construircomandos.bat
   exit
 )
