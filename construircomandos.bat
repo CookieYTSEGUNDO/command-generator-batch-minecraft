@@ -1,5 +1,5 @@
 @echo off
-@chcp 1252>nul
+@chcp 65001>nul
 set p=
 set versao=1.0
 title Gerador de comandos
@@ -13,7 +13,12 @@ curl https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-m
 >nul findstr /c:"%versao%" verificador.txt && (
   goto comandos
 ) || (
-  curl -o 
+  mkdir oldconstruircomandos
+  move %~nx0 oldconstruircomandos
+  timeout /t 0 /nobreak >nul
+  curl -o https://raw.githubusercontent.com/CookieYTSEGUNDO/command-generator-batch-minecraft/main/construircomandos.bat > construircomandos.bat
+  start construircomandos.bat
+  exit
 )
 
 
@@ -74,7 +79,7 @@ if "%choice%"=="1" set bold=true&& goto title4
 if "%choice%"=="2" set bold=false&& goto title4
 
 :title4
-@chcp 1252>nul
+@chcp 65001>nul
 setlocal ENABLEDELAYEDEXPANSION
 echo Mostrar texto para:
 
@@ -126,7 +131,7 @@ echo Resultado: /title !selector! title !resultado!
 echo =====================
 echo Pressione qulquer tecla para continuar.
 pause >nul
-@chcp 1252>nul
+@chcp 65001>nul
 goto comandos
 
 :tellraw
