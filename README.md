@@ -1,9 +1,6 @@
-# command-generator-batch-minecraft
+Criador de comandos, para windows. (Ou um Sistema operacional que suporta os Requesitos)
+O windows deve ter este requesitos do cmd:
 
-Oi!
+Comandos: **set**, **Curl**, **Batch** e **Choice**
 
-este é um gerador de comandos no minecraft.
-
-não execute ainda, eu vou editar isso para vocês abaixarem.
-
-obrigado!
+Aproveite sua escolha.
